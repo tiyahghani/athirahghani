@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: black;
+  background-color: lightgray;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  --color: initial; /* or whatever default color you want to set */
+}
+
+header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 70px;
+}
+.icon {
+  cursor: pointer;
+  color: #000;
+  font-size: 3em;
+}
+
+.icon i {
+  pad: 50px;
+}
+
+.nav-area,
+.btn-area {
+  list-style: none;
+}
+
+.nav-area li {
+  display: inline-block;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-area li {
+  display: inline-block;
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+
+.nav-area li a,
+.btn-area li a {
+  transition: 0.3s;
+  color: black;
+}
+
+.nav-area li a:hover,
+.nav-area li a.active {
+  color: brown;
+  border-bottom: 0.2rem solid brown;
+  padding: 0.5rem 0;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  transition: 0.5s ease;
+}
+
+/* .content {
+  /* padding: 20px; */
+/* margin-top: 50px; 
+} */
+section {
+  height: 100vh;
+}
+
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+  background-color: #333;
+  color: white;
+}
+
+.home-section h1 {
+  font-size: 40px;
+}
+
+.contact-section {
+  background-color: #ccc;
+}
+/* .tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.tab.active{
+    opacity: 1;
+}
+
+.line{
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: brown;
+    transition: transform 0.3s;
+} */
+
+/* .btn-area{
+    cursor: pointer;
+
+} */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  animation: slide-down 0.5s;
+  background-color: white;
+}
+
+/* Add this to styles.css */
+@media screen and (max-width: 768px) {
+  .nav-area {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 60px;
+    text-align: center;
+  }
+
+  .nav-area.active {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .nav-area li {
+    line-height: 2.5;
+  }
+
+  .active .line1 {
+    transform: rotate(-50deg) translate(-5px, 8px);
+  }
+  .active .line2 {
+    opacity: 0;
+  }
+  .active .line3 {
+    transform: rotate(50deg) translate(-5px, -8px);
+  }
+}
+
+.hero-text {
+  width: 40%;
+}
+
+.icon-area {
+  height: 10;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.icon-area ul {
+  display: flex;
+}
+
+.icon-area li {
+  list-style: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.icon-area li {
+  position: relative;
+  display: block;
+  height: 100px;
+  width: 40px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 2em;
+  transition: 0.5s;
+}
+
+.icon-area a {
+  color: white;
+}
+.icon-area ul li:hover {
+  color: var(--color);
+}
+
+.about-section,
+.work-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-section {
+  background-color: #f0f0f0;
+}
+
+.about-section {
+  background-color: #ddd;
+}
+
+.about-section > * {
+  /* Allow the content to grow and take available space */
+  flex-grow: 1;
+}
+
+.img-box {
+  margin-left: 10%;
+  position: relative;
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-out;
+}
+.img-box:hover {
+  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+}
+.img-box .image {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transition: transform 0.3s ease-out;
+}
+.img-box:hover .image {
+  transform: translateY(-100px);
+}
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-out;
+}
+.img-box:hover .image img {
+  opacity: 0.7;
+}
+.img-box:hover .image {
+  transform: translateY(-100px);
+}
+.img-box ul {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  list-style: none;
+}
+.img-box ul li {
+  margin: 0 10px;
+}
+.img-box ul li a {
+  display: block;
+  height: 50px;
+  width: 50px;
+  color: #000;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(200px);
+  background: #fff;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.img-box:hover > ul > li > a {
+  opacity: 1;
+  transform: translateY(0);
+}
+.img-box:hover > ul > li:nth-child(2) a {
+  transition-delay: 0.1s;
+}
+
+.img-box .img-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.info {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  color: #000;
+  line-height: 26px;
+}
+.info h2 {
+  font-size: 27px;
+  margin: 20px 0;
+}
+
+/* .about-container {
+    max-width: 100%;
+    padding: 30px;
+  } */
+
+.about-content {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.about-content p,
+h1 {
+  max-width: 50%;
+}
+
+.resumebtn,
+.projectbtn {
+  display: flex;
+  border-radius: 4px;
+  background-color: #333;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.resumebtn span,
+.projectbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.resumebtn span:after,
+.projectbtn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.resumebtn:hover span,
+.projectbtn:hover span {
+  padding-right: 25px;
+}
+
+.resumebtn:hover span:after,
+.projectbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-content p,
+  h1 {
+    max-width: 100%;
+    /* font-size: 15px;
+      text-align: center;   */
+  }
+
+  .about-section {
+    height: 150vh;
+  }
+}
+
+/* work section */
+
+.project-container,
+.about-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.project-image img {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.project-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  opacity: 0;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-card:hover .project-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-description {
+  margin-bottom: 10px;
+}
